@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="maui_cards.MainPage">
+    
+    <ScrollView>
+        <VerticalStackLayout>
+            <!-- Card principal -->
+            <Frame
+                BackgroundColor="{DynamicResource Primary}"
+                CornerRadius="10"
+                Margin="0"
+                Padding="0"
+                HasShadow="True">
+                
+                <VerticalStackLayout Spacing="10">
+                    <!-- Fila principal con tres columnas -->
+                    <Grid 
+                        RowDefinitions="Auto"
+                        ColumnDefinitions="Auto,*,Auto"
+                        Margin="15,10,15,0">
+                        
+                        <!-- Columna 1: Imagen izquierda -->
+                        <Frame
+                            Grid.Column="0"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource Secondary}"
+                            CornerRadius="10"
+                            Margin="0"
+                            HeightRequest="55"
+                            WidthRequest="55"
+                            HasShadow="True"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start">
+                            
+                            <Image
+                                Source="dotnet_bot.svg"
+                                Aspect="AspectFill" />
+                        </Frame>
+                        
+                        <!-- Columna 2: Texto central (ocupa todo el espacio restante) -->
+                        <VerticalStackLayout
+                            Grid.Column="1"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start"
+                            Spacing="3"
+                            Margin="15,5,15,0">
+                            
+                            <Label
+                                Text="Nombre Común"
+                                FontSize="20"
+                                FontAttributes="Bold"
+                                TextColor="White"
+                                HorizontalOptions="Start" />
+                            
+                            <Label
+                                Text="Nombre Científico"
+                                FontSize="16"
+                                FontAttributes="Italic"
+                                TextColor="#E0E0E0"
+                                HorizontalOptions="Start" />
+                        </VerticalStackLayout>
+                        
+                        <!-- Columna 3: Imagen derecha -->
+                        <Frame
+                            Grid.Column="2"
+                            IsClippedToBounds="True"
+                            Padding="0"
+                            BackgroundColor="{DynamicResource NoSyncColor}"
+                            CornerRadius="10"
+                            Margin="0"
+                            HeightRequest="10"
+                            WidthRequest="10"
+                            HasShadow="True"
+                            HorizontalOptions="End"
+                            VerticalOptions="Start">
+                            
+                        </Frame>        
+                    </Grid>
+                    
+                    <!-- Información adicional -->
+                    <HorizontalStackLayout 
+                        Spacing="10" 
+                        Margin="15,0,15,10">
+                        <Label
+                            Text="Fecha:"
+                            FontSize="15"
+                            FontAttributes="Bold"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+                        
+                        <Label
+                            Text="20/10/2023"
+                            FontSize="15"
+                            TextColor="#E0E0E0"
+                            VerticalOptions="Center"
+                            HorizontalOptions="EndAndExpand" />
+                    </HorizontalStackLayout>
+                    
+                </VerticalStackLayout>
+            </Frame>
+            
+            <!-- Puedes agregar más cards aquí -->
+            
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>
