@@ -24,7 +24,7 @@ En nuestra aplicación, implementamos CollectionView para mostrar tarjetas de in
 
 A continuación se muestra cómo definimos un CollectionView básico en XAML:
 
-![Código XAML para CollectionView básico](img/codigo_collectionview_basico.png)
+![Código XAML para CollectionView básico](img/ejemplo_basico_CollectionView_vista.png)
 
 Este código crea una lista vertical de elementos, donde cada elemento se renderiza usando la plantilla definida en ItemTemplate.
 
@@ -34,7 +34,7 @@ Después de aplicar estilos y plantillas a los elementos, podemos transformar un
 
 El código XAML para implementar esta plantilla personalizada se muestra aquí:
 
-![Código XAML para plantilla personalizada](img/codigo_template_personalizado.png)
+![Código XAML para plantilla personalizada](img/ejemplo_basico_CollectionView_template.png)
 
 Este fragmento implementa un Frame con esquinas redondeadas, efectos de sombra y un diseño estructurado para cada tarjeta, creando una experiencia visual mejorada.
 
