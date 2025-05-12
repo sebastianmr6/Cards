@@ -4,12 +4,20 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:maui_cards"
-    Shell.FlyoutBehavior="Disabled"
+    xmlns:views="clr-namespace:maui_cards.Views" 
+    Shell.FlyoutBehavior="Flyout"
     Title="maui_cards">
+
+    <!-- xmlns:views="clr-namespace:maui_cards.Views" es usado para llamar a las páginas dentro del folder Views -->
 
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    <ShellContent
+        Title="Página de Listas"
+        ContentTemplate="{DataTemplate views:ListPage}"
+        Route="ListPage" />
 
 </Shell>
