@@ -1,41 +1,41 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:maui_cards"
-             xmlns:viewmodels="clr-namespace:maui_cards.ViewModels"
-             xmlns:converters="clr-namespace:maui_cards.Converters"
-             x:Class="maui_cards.Views.ListPage"
-             Title="Página de Listas"
-             Padding="10">
-    
-    <ListView x:Name="CardsListView" 
-              ItemsSource="{Binding Cards}"
-              SelectionMode="Single"
-              HasUnevenRows="True"
-              SeparatorVisibility="None"
-              CachingStrategy="RecycleElement"
-              ItemSelected="OnItemSelected">
-        <ListView.ItemTemplate>
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="maui_cards.Views.CollectionViewPage"
+             Title="CollectionView" >
+
+    <CollectionView x:Name="collectionView" SelectionMode="Single">
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical" Span="1" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>Item 1</x:String>
+                <x:String>Item 2</x:String>
+                <x:String>Item 3</x:String>
+                <x:String>Item 4</x:String>
+                <x:String>Item 5</x:String>
+                <x:String>Item 6</x:String>
+                <x:String>Item 7</x:String>
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <!-- Definir el template de los elementos -->
+        <CollectionView.ItemTemplate>
             <DataTemplate>
-                <ViewCell>
-                    <Frame
-                        BackgroundColor="{DynamicResource Primary}"
-                        CornerRadius="10"
-                        Margin="5,5,5,10"
-                        Padding="0"
-                        InputTransparent="False"
-                        IsVisible="True"
-                        HasShadow="True">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnCardTapped" CommandParameter="{Binding .}" NumberOfTapsRequired="1" />
-                        </Frame.GestureRecognizers>
+                <Frame
+                    BackgroundColor="{DynamicResource Primary}"
+                    CornerRadius="5"
+                    Margin="0"
+                    Padding="0" >
                     
-                        <VerticalStackLayout Spacing="10">
-                            <Grid 
-                                RowDefinitions="Auto"
-                                ColumnDefinitions="Auto,*,Auto"
-                                Margin="15,10,15,0">
+                    <VerticalStackLayout Spacing="10">
+                        <!-- Fila principal con tres columnas -->
+                        <Grid 
+                            RowDefinitions="Auto"
+                            ColumnDefinitions="Auto,*,Auto"
+                            Margin="15,10,15,0">
                             
+                            <!-- Columna 1: Imagen izquierda -->
                             <Frame
                                 Grid.Column="0"
                                 Padding="0"
@@ -44,15 +44,15 @@
                                 Margin="0"
                                 HeightRequest="55"
                                 WidthRequest="55"
-                                HasShadow="true"
                                 HorizontalOptions="Start"
                                 VerticalOptions="Start">
                                 
                                 <Image
-                                    Source="{Binding ImagenPath, Converter={StaticResource ImageSourceConverter}}"
+                                    Source="dotnet_bot.svg"
                                     Aspect="AspectFill" />
                             </Frame>
                             
+                            <!-- Columna 2: Texto central (ocupa todo el espacio restante) -->
                             <VerticalStackLayout
                                 Grid.Column="1"
                                 HorizontalOptions="FillAndExpand"
@@ -66,7 +66,7 @@
                                     FontAttributes="Bold"
                                     TextColor="White"
                                     HorizontalOptions="Start" />
-                                    
+                                
                                 <Label
                                     Text="{Binding NombreCientifico}"
                                     FontSize="16"
@@ -75,6 +75,7 @@
                                     HorizontalOptions="Start" />
                             </VerticalStackLayout>
                             
+                            <!-- Columna 3: Imagen derecha -->
                             <Frame
                                 Grid.Column="2"
                                 IsClippedToBounds="True"
@@ -84,11 +85,13 @@
                                 Margin="0"
                                 HeightRequest="10"
                                 WidthRequest="10"
-                                HasShadow="True"
                                 HorizontalOptions="End"
-                                VerticalOptions="Start" />
+                                VerticalOptions="Start">
+                                
+                            </Frame>        
                         </Grid>
                         
+                        <!-- Información adicional -->
                         <HorizontalStackLayout 
                             Spacing="10" 
                             Margin="15,0,15,10">
@@ -98,6 +101,7 @@
                                 FontAttributes="Bold"
                                 TextColor="White"
                                 VerticalOptions="Center" />
+                            
                             <Label
                                 Text="{Binding Fecha, StringFormat='{0:dd/MM/yyyy}'}"
                                 FontSize="15"
@@ -105,10 +109,11 @@
                                 VerticalOptions="Center"
                                 HorizontalOptions="EndAndExpand" />
                         </HorizontalStackLayout>
+                        
                     </VerticalStackLayout>
-                    </Frame>
-                </ViewCell>
+                </Frame>
             </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
 </ContentPage>

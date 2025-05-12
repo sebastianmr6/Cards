@@ -16,8 +16,13 @@
         Route="MainPage" />
 
     <ShellContent
-        Title="Página de Listas"
+        Title="ListView"
         ContentTemplate="{DataTemplate views:ListPage}"
         Route="ListPage" />
+
+    <ShellContent
+        Title="CollectionView"
+        ContentTemplate="{DataTemplate views:CollectionViewPage}"
+        Route="CollectionViewPage" />
 
 </Shell>
