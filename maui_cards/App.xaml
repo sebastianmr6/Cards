@@ -7,12 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>            <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
-                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-            
-            <!-- Colores personalizados -->
-            <Color x:Key="SyncColor">#4CAF50</Color> <!-- Verde -->
-            <Color x:Key="NoSyncColor">#F44336</Color> <!-- Rojo -->
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />            </ResourceDictionary.MergedDictionaries>
             
             <!-- Converters -->
             <converters:BoolToColorConverter x:Key="BoolToColorConverter" />
