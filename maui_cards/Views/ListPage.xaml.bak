@@ -23,12 +23,7 @@
                         CornerRadius="10"
                         Margin="5,5,5,10"
                         Padding="0"
-                        InputTransparent="False"
-                        IsVisible="True"
                         HasShadow="True">
-                        <Frame.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnCardTapped" CommandParameter="{Binding .}" NumberOfTapsRequired="1" />
-                        </Frame.GestureRecognizers>
                     
                         <VerticalStackLayout Spacing="10">
                         <Grid 
@@ -49,8 +44,9 @@
                                 VerticalOptions="Start">
                                 
                                 <Image
-                                    Source="{Binding ImagenPath, Converter={StaticResource ImageSourceConverter}}"
-                                    Aspect="AspectFill" />
+                                    Source="{Binding ImagenPath}"
+                                    Aspect="AspectFill"
+                                    CacheStrategy="Cache" />
                             </Frame>
                             
                             <VerticalStackLayout

@@ -1,6 +1,5 @@
 // filepath: /Users/sebastian/Projects/MAUI/Cards/maui_cards/Views/ListPage.xaml.cs
 using System;
-using System.Threading.Tasks;
 using maui_cards.ViewModels;
 using maui_cards;
 
@@ -51,18 +50,6 @@ public partial class ListPage : ContentPage
     {
         try
         {
-            // Obtenemos el frame que fue tocado
-            if (sender is Frame frame)
-            {
-                // Efecto visual de pulsación (cambiamos temporalmente el color)
-                var originalColor = frame.BackgroundColor;
-                frame.BackgroundColor = Colors.DarkSlateBlue;
-                
-                // Regresamos al color original después de un breve tiempo
-                await Task.Delay(150);
-                frame.BackgroundColor = originalColor;
-            }
-            
             if (e.Parameter == null)
                 return;
                 
